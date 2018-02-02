@@ -54,9 +54,9 @@ RUN yum -y install gcc-c++ expat-devel cmake ncurses-devel perl libxml2-devel\
     && cp /usr/local/src/mysql-${MYSQL_VERSION}/support-files/mysql.server.sh /etc/init.d/mysqld \
     && chmod +x  /etc/init.d/mysqld \
     && yum clean all \
-    && rm -rf /usr/local/src/* \
     && cp -i /usr/local/src/soft/httpd.conf /usr/local/httpd/conf/httpd.conf \
     && echo "export PATH=$PATH:/usr/local/httpd/bin/:/usr/local/php/bin/:/usr/local/mysql/bin/" >> /etc/profile \
+	&& rm -rf /usr/local/src/* \
     && /etc/init.d/httpd start \
     && /etc/init.d/mysqld start \
 
