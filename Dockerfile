@@ -52,11 +52,13 @@ RUN yum -y install gcc-c++ expat-devel cmake ncurses-devel perl libxml2-devel\
     && make && make install \
     && cp /usr/local/httpd/bin/apachectl /etc/init.d/httpd \
     && cp /usr/local/src/mysql-${MYSQL_VERSION}/support-files/mysql.server.sh /etc/init.d/mysqld \
+	&& cp /usr/local/src/mysql-${MYSQL_VERSION}/support-files/my-default.cnf /etc/my.cnf \
     && chmod +x  /etc/init.d/mysqld \
     && yum clean all \
-    && cp -i /usr/local/src/httpd.conf /usr/local/httpd/conf/httpd.conf \
+    && \cp  /usr/local/src/httpd.conf /usr/local/httpd/conf/httpd.conf \
     && echo "export PATH=$PATH:/usr/local/httpd/bin/:/usr/local/php/bin/:/usr/local/mysql/bin/" >> /etc/profile \
 	&& rm -rf /usr/local/src/* \
+	&& source /etc/profile \
     && /etc/init.d/httpd start \
     && /etc/init.d/mysqld start \
 
