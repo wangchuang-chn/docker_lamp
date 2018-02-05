@@ -63,5 +63,6 @@ RUN yum -y install gcc-c++ expat-devel cmake ncurses-devel perl libxml2-devel\
     && /etc/init.d/httpd start \
     && /etc/init.d/mysqld start \
 
+CMD  /usr/local/mysql/scripts/mysql_install_db --defaults-file=/etc/my.cnf --basedir=/usr/local/mysql/ --datadir=/usr/local/mysql/data/	--user=mysql
 
 EXPOSE 80 443
