@@ -60,6 +60,7 @@ RUN yum -y install gcc-c++ expat-devel cmake ncurses-devel perl libxml2-devel\
     && echo "export PATH=$PATH:/usr/local/httpd/bin/:/usr/local/php/bin/:/usr/local/mysql/bin/" >> /etc/profile \
 	&& touch /tmp/first \
 	&& cp /usr/local/src/first.sh /opt/ \
+	&& chmod +x /opt/first.sh \
 	&& rm -rf /usr/local/src/* \
 	&& source /etc/profile \
 
