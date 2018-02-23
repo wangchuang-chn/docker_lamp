@@ -44,6 +44,7 @@ RUN yum -y install gcc-c++ expat-devel cmake ncurses-devel perl libxml2-devel\
  -DMYSQL-USER=mysql \
     && make && make install \
     && rm -rf /usr/local/mysql/data/* \
+    && chown -R mysql:mysql /usr/local/mysql/data/ \
     && rm -rf /usr/local/mysql/mysql-test \
     && yum -y remove cmake \
     && ls -l /usr/local/src/ \
