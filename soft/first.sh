@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 if [ -f /tmp/first ]
 then
 	/usr/local/mysql/scripts/mysql_install_db --defaults-file=/etc/my.cnf --basedir=/usr/local/mysql/ --datadir=/usr/local/mysql/data/	--user=mysql 
