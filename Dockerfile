@@ -43,7 +43,7 @@ RUN yum -y install gcc-c++ expat-devel cmake ncurses-devel perl libxml2-devel\
  -DMYSQL_DATADIR=/usr/local/mysql/data \
  -DMYSQL-USER=mysql \
     && make && make install \
-    && rm -rf /usr/local/mysql/data \
+    && rm -rf /usr/local/mysql/data/* \
     && rm -rf /usr/local/mysql/mysql-test \
     && yum -y remove cmake \
     && ls -l /usr/local/src/ \
@@ -55,7 +55,7 @@ RUN yum -y install gcc-c++ expat-devel cmake ncurses-devel perl libxml2-devel\
 	&& cp /usr/local/src/my.cnf /etc/ \
     && chmod +x  /etc/init.d/mysqld \
     && yum clean all \
-	&& rm -rf /usr/local/httpd/conf/httpd.conf\
+	&& rm -rf /usr/local/httpd/conf/httpd.conf \
     && cp  /usr/local/src/httpd.conf /usr/local/httpd/conf/httpd.conf \
     && echo "export PATH=$PATH:/usr/local/httpd/bin/:/usr/local/php/bin/:/usr/local/mysql/bin/" >> /etc/profile \
 	&& touch /tmp/first \
