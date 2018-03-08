@@ -67,4 +67,4 @@ RUN yum -y install gcc-c++ expat-devel cmake ncurses-devel perl libxml2-devel\
 EXPOSE 80 443
 
 
-CMD  /opt/first.sh
+#CMD  /opt/first.sh
