@@ -10,3 +10,4 @@ then
 fi
 /etc/init.d/httpd start
 /etc/init.d/mysqld start
+/bin/bash
